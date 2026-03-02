@@ -178,6 +178,26 @@ export default function UpdateTestPage() {
             return;
         }
 
+        let totalScore = 0;
+        
+        cauHoiRieng.forEach(ch => {
+            totalScore += Number(ch.Diem || 0);
+        });
+
+        doanVanList.forEach(dv => {
+            dv.CauHoi.forEach((ch: any) => {
+                totalScore += Number(ch.Diem || 0);
+            });
+        });
+
+        const requiredScore = loaiDeThi === "HYBRID" ? 400 : 200;
+
+        if (totalScore !== requiredScore) {
+            alert(`Loại đề ${loaiDeThi} yêu cầu tổng điểm là ${requiredScore}`);
+            setLoadingButton(false);
+            return;
+        }
+
         const formData = new FormData();
         formData.append("TenDeThi", tenDeThi);
         formData.append("LoaiDeThi", loaiDeThi);

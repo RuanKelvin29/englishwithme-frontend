@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>© 2025 ENGLISH with Me. All rights reserved.</p>
+        <p>© 2026 ENGLISH with Me. All rights reserved.</p>
         
         <button 
           onClick={scrollToTop} 
