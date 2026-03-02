@@ -138,10 +138,12 @@ export default function CreateTestForm() {
 
         if (currentTotalQuestions < soCauHoi) {
             alert(`Bạn chưa tạo đủ số câu hỏi yêu cầu! (${currentTotalQuestions}/${soCauHoi})`);
+            setLoadingButton(false);
             return;
         }
         if (currentTotalQuestions > soCauHoi) {
             alert(`Số lượng câu hỏi vượt quá giới hạn cho phép! (${currentTotalQuestions}/${soCauHoi})`);
+            setLoadingButton(false);
             return;
         }
 
